@@ -11,7 +11,8 @@
 	})(window,document,'script','dataLayer','GTM-ND3VLP9');</script>
 	<!-- End Google Tag Manager -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
     <!--Bootstrap css-->
     <link
@@ -195,5 +196,34 @@
         initESW("https://service.force.com");
       }
     </script>
+
+
+	  <script type='text/javascript' src='https://service.force.com/embeddedservice/menu/fab.min.js'></script>
+<script type='text/javascript'>
+	var initESW = function(gslbBaseURL) {
+		// Necessário se você quiser rótulos em um idioma diferente do contexto de seu usuário.
+		//embedded_svc.menu.settings.language = ''; //Por exemplo, insira "pt" ou "pt-BR"
+
+		embedded_svc.menu.init(
+			'https://ufmg-dev-ed.develop.my.salesforce.com',
+			'https://d.la1-c1-ia6.salesforceliveagent.com/chat',
+			gslbBaseURL,
+			'00DDn000009QoV6',
+			'Channel_Menu_Test'
+		);
+	};
+
+	if (!window.embedded_svc || !window.embedded_svc.menu) {
+		var s = document.createElement('script');
+		s.setAttribute('src', 'https://ufmg-dev-ed.develop.my.salesforce.com/embeddedservice/menu/fab.min.js');
+		s.onload = function() {
+			initESW(null);
+		};
+		document.body.appendChild(s);
+	} else {
+		initESW('https://service.force.com');
+	}
+</script>
+	  
   </body>
 </html>
